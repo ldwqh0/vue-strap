@@ -1,28 +1,21 @@
 <template>
   <div id="app">
-    <x-header>{{title}}</x-header>
-    <router-view/>
-    <tabbar>
-      <tabbar-item link="/tab1">
-        <div slot="label">第一页</div>
-      </tabbar-item>
-      <tabbar-item link="/tab2">
-        <div slot="label">第二页</div>
-      </tabbar-item>
-    </tabbar>
+    <tabs>
+      <tab>{{title}}</tab>
+      <tab>Tab content 1.111</tab>
+      <tab>Tab content 2.11</tab>
+    </tabs>
   </div>
 </template>
 
 <script>
-  import { Tabbar, TabbarItem, XHeader } from 'vux'
   import { mapState } from 'vuex'
 
   export default {
     name: 'app',
-    components: {
-      TabbarItem,
-      Tabbar,
-      XHeader
+    components: {},
+    data () {
+      return {text1: 's'}
     },
     computed: {
       ...mapState({
@@ -33,8 +26,5 @@
 </script>
 
 <style lang="less">
-
-  html, body, #app {
-    height: 100%;
-  }
+  @import '~bootstrap/less/bootstrap.less';
 </style>

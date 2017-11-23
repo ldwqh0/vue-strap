@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import App from './App'
 import { router } from './config'
-import FastClick from 'fastclick'
 import store from './vuex'
-
+import VeeValidate from 'vee-validate'
+import * as uiv from 'uiv'
 Vue.config.productionTip = false
-FastClick.attach(document.body)
+
+Vue.use(uiv)
+Vue.use(VeeValidate)
 
 /* eslint-disable no-new */
 new Vue({

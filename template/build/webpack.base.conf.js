@@ -3,7 +3,6 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-const vuxloader = require('vux-loader')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -78,7 +77,4 @@ const webpackConfig = {
   }
 }
 
-// 配置额外的vux插件，这个是vux组件必须的
-module.exports = vuxloader.merge(webpackConfig, {
-  plugins: ['vux-ui', 'progress-bar', 'duplicate-style']
-})
+module.exports = webpackConfig
